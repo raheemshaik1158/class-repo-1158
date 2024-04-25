@@ -1,0 +1,77 @@
+empid sal dept
+01 
+
+proc import datafile="pathofthe file.csv"  out=outfile
+dbms=csv getnames=yes;
+quit;
+
+proc sql;
+create table table_name as
+select empid, dept, sum(sal) as salary from Maintable 
+groupby empid,dept;
+quit;
+
+select dept, sum(sal) from mailtable where sal=(select max(sal) from maintable) 
+
+
+A - 1000 3
+B- 1000 3
+C - 2000 2
+D-5000  1
+E-2000 2
+
+A - 1000 5
+B- 1000 4
+C - 2000 3
+D-5000  1
+E-2000 2
+
+D-5000  1
+C - 2000 2
+E-2000 3
+A - 1000 4
+B- 1000 5
+
+
+5000 1
+3000 2
+2000 3
+2000 3
+1000 4
+1000 4
+
+5000 1
+3000 2
+2000 3
+2000 3
+1000 5
+1000 5
+
+
+
+TableA 
+A
+
+1
+1
+1
+null
+
+TableB 
+B
+
+1
+1
+null
+
+Left join: 2+2+2+1=7
+Right join: 3+3+1=7
+full join: 6+2
+inner join: 6
+
+3+3+3+3+1= 13
+
+
+
+
+
